@@ -55,4 +55,16 @@ function sym(...args) {
 
  // console.log(sym([2, 3, 3, 5, 5, 8], [2, 3,  6, 7], [3, 3, 5, 7]));
 
- 
+ // advanced/ cleaner solution:
+
+ const diff = (arr1, arr2) => [
+  ...arr1.filter(e => !arr2.includes(e)),
+  ...arr2.filter(e => !arr1.includes(e))
+];
+
+const sym = (...args) => [...new Set(args.reduce(diff))];
+
+// test here
+sym([1, 2, 3], [5, 2, 1, 4]);
+
+//
