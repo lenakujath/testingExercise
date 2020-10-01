@@ -6,4 +6,4 @@ const factorialize = (num) => {
     return result;
   };
 
-  console.log(factorialize(5))
+ 
