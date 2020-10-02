@@ -17,4 +17,11 @@ let sortedLength = stringLength.sort((a, b) => a -b );
 return sortedLength[sortedLength.length -1];
 };
 
-console.log(findLongestWordLength("asdfasdfasdf dfdf dfs sfdfd"))
+//optimized solution 
+
+function findLongestWordLength(s) {
+    return s.split(' ')
+      .reduce(function(x, y) {
+        return Math.max(x, y.length)
+      }, 0);
+  }
